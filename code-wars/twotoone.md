@@ -16,14 +16,10 @@ Solution:
 
 ```js
 function longest(s1, s2) {
-  let a1 = [...new Set(s1)];
-  let a2 = [...new Set(s2)];
-
-  for (let i = 0; i < a2.length; i++) {
-    a1.push(a2[i]);
-  }
-
-  let result = [...new Set(a1)].sort().join("");
+  // use a Set to store unique characters from initial strings.
+  let chars = [...new Set(s1 + s2)];
+  // take combined chars array, sort it and return to a string
+  let result = chars.sort().join("");
 
   return result;
 }
